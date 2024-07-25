@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.webdemo.mapper.UserMapper">
+    <insert id="reg" parameterType="com.ly.webdemo.model.UserInfo">
+        insert into userinfo(username, password)
+        values(#{userinfo.username}, #{userinfo.password});
+    </insert>
+    <select id="selectByUsername" resultType="com.ly.webdemo.model.UserInfo">
+        select * from userinfo where username = #{username};
+    </select>
+</mapper>
